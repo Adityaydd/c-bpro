@@ -18,12 +18,13 @@ void writeCSV(User user[], int count) {
   fprintf(file, "user,password\n");
   for (int i = 0; i < count; i++) {
     fprintf(file, "%s,%s\n", user[i].user, user[i].password);
+    printf("c");
   }
   fclose(file);
 }
 
 void createCSVfileifNot() {
-  FILE *file = fopen("user.csv", "w");
+  FILE *file = fopen("user.csv", "r");
   if (!file) {
     file = fopen("user.csv", "w");
     if (!file) {
@@ -59,11 +60,9 @@ void login(User user[], int count, char *user_name, char *user_pass) {
         strcmp(user[i].password, user_pass) == 0) {
       printf("logged inn\n");
       return;
-    } else {
-      printf("Sry wrong password or wrong username\n");
-      return;
     }
   }
+  printf("The username or password is wrong");
 }
 
 void read_CSV(User users[], int *count) {
