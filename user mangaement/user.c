@@ -58,7 +58,7 @@ void login(User user[], int count, char *user_name, char *user_pass) {
   for (int i = 0; i < count; i++) {
     if (strcmp(user[i].user, user_name) == 0 &&
         strcmp(user[i].password, user_pass) == 0) {
-      printf("logged inn\n");
+      printf("welcome %s\n", user_name);
       return;
     }
   }
