@@ -18,7 +18,6 @@ void writeCSV(User user[], int count) {
   fprintf(file, "user,password\n");
   for (int i = 0; i < count; i++) {
     fprintf(file, "%s,%s\n", user[i].user, user[i].password);
-    printf("c");
   }
   fclose(file);
 }
